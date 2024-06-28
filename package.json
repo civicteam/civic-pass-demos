@@ -1,0 +1,13 @@
+{
+  "name": "civic-pass-demos",
+  "private": true,
+  "workspaces": [
+    "packages/components",
+    "packages/evm",
+    "packages/evm/vite",
+    "packages/evm/next",
+    "packages/solana",
+    "packages/solana/vite",
+    "packages/solana/next"
+  ]
+}

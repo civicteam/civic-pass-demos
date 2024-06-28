@@ -1,0 +1,106 @@
+:root {
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+    color-scheme: light;
+    color: rgba(0, 0, 0, 0.87);
+    background: radial-gradient(110.49% 110.55% at 43.95% 4.02%, #FFF7F3 0%, #FFA877 100%);
+    height: 100%;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    margin: 1em;
+    flex-wrap: wrap;
+    display: grid;
+    gap: 10px;
+    place-items: center;
+    justify-content: center;
+    min-width: 320px;
+}
+
+#root h1 {
+    font-size: 3.2em;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: .05em;
+    font-weight: 800;
+    color: rgba(0, 0, 0, 0.0);
+    line-height: .9;
+    margin: 0;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: #F15C3E;
+}
+
+#root a {
+    font-weight: 500;
+    color: #646cff;
+    text-decoration: inherit;
+}
+
+#root a:hover {
+    color: #535bf2;
+}
+
+#root p {
+    text-align: center;
+    text-wrap: pretty;
+    line-height: 1.3;
+}
+
+button {
+    border-radius: 50px;
+    border: .02px solid #EBEBEB;
+    justify-content: center;
+    height: 3em;
+    font-size: 1em;
+    font-weight: 500;
+    font-family: inherit;
+    line-height: 1.1;
+    text-wrap: pretty;
+    background-color: #F5F5F5;
+    cursor: pointer;
+    transition: border-color 0.25s;
+    display: flex;
+    align-items: center;
+    gap: .3em;
+    box-shadow: 0px 1px 3px 0px rgba(92, 24, 24, 0.05);
+}
+button:hover {
+    transform: scale(1.03);
+    transition:all .3s ease;
+    box-shadow: 0px 7px 23px 0px rgba(92, 24, 24, 0.15);
+}
+button:focus,
+button:focus-visible {
+    background: rgba(240, 240, 240, 0.85);
+    box-shadow: inset 0 0 10px rgba(92, 24, 24, 0.15);
+    outline: 4px auto rgba(255, 107, 78, 0.25);
+}
+
+#main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+#main button {
+    width: 70%;
+}
+
+.ticket1, .ticket2, .pin {
+    transform-origin: 100px 100px;
+    transition: 1s cubic-bezier(.23,1.45,.49,.95);
+}
+svg:hover .ticket1 {
+    transform: rotate(-10deg); }
+svg:hover .ticket2 {
+    transform: rotate(-25deg); }
+.ticket1 {
+    transform: rotate(-3deg); }
+.ticket2 {
+    transform: rotate(-10deg); }
