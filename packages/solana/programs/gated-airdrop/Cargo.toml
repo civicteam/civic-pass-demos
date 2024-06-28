@@ -1,12 +1,12 @@
 [package]
-name = "workshop-solana-airdrop"
+name = "gated-airdrop"
 version = "0.1.0"
 description = "Created with Anchor"
 edition = "2021"
 
 [lib]
 crate-type = ["cdylib", "lib"]
-name = "workshop_solana_airdrop"
+name = "gated_airdrop"
 
 [features]
 no-entrypoint = []

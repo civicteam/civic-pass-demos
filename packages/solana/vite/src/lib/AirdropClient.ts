@@ -1,6 +1,6 @@
 import { Keypair, PublicKey, SystemProgram, TransactionSignature } from "@solana/web3.js";
 import { AnchorProvider, IdlAccounts, Program } from "@coral-xyz/anchor";
-import { IDL, WorkshopSolanaAirdrop } from "./types/workshop_solana_airdrop";
+import { IDL, WorkshopSolanaAirdrop } from "./types/gated_airdrop";
 import BN from "bn.js";
 import {
   getAssociatedTokenAddressSync, TOKEN_PROGRAM_ID,

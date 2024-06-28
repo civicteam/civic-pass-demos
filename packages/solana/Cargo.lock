@@ -2640,7 +2640,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "workshop-solana-airdrop"
+name = "gated-airdrop"
 version = "0.1.0"
 dependencies = [
  "anchor-lang",

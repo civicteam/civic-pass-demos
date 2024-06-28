@@ -13,7 +13,7 @@ pub const TICKET: &[u8] = b"ticket";
 pub const MINT_AUTHORITY: &[u8] = b"mint_authority";
 
 #[program]
-pub mod workshop_solana_airdrop {
+pub mod gated_airdrop {
     use super::*;
 
     pub fn initialize(ctx: Context<Initialize>, mint: Pubkey, gatekeeper_network: Pubkey, amount: u64) -> Result<()> {

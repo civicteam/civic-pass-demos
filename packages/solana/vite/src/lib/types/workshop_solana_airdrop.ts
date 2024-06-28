@@ -1,6 +1,6 @@
 export type WorkshopSolanaAirdrop = {
   "version": "0.1.0",
-  "name": "workshop_solana_airdrop",
+  "name": "gated_airdrop",
   "instructions": [
     {
       "name": "initialize",
@@ -145,7 +145,7 @@ export type WorkshopSolanaAirdrop = {
 
 export const IDL: WorkshopSolanaAirdrop = {
   "version": "0.1.0",
-  "name": "workshop_solana_airdrop",
+  "name": "gated_airdrop",
   "instructions": [
     {
       "name": "initialize",

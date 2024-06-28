@@ -5,7 +5,7 @@ types = "app/src/lib/types"
 seeds = false
 skip-lint = false
 [programs.localnet]
-workshop_solana_airdrop = "air4tyw7S12bvdRtgoLgyQXuBfoLrjBS7Fg4r91zLb1"
+gated_airdrop = "air4tyw7S12bvdRtgoLgyQXuBfoLrjBS7Fg4r91zLb1"
 
 [registry]
 url = "https://api.apr.dev"
