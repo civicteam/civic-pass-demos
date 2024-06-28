@@ -1,4 +1,4 @@
-# Civic Pass EVM Sample Airdrop Project
+# Civic Pass EVM Demo
 
 This project demonstrates the integration of Civic Pass into an Ethereum smart contract.
 
@@ -21,20 +21,8 @@ Run a local hardhat node:
 yarn local:start
 ```
 
-Start the frontend:
-
-```shell
-yarn app:start
-```
-
 Deploy to testnet:
 
 ```shell
 PRIVATE_KEY=${YOUR_PRIVATE_KEY} yarn deploy:testnet
-```
-
-Start the frontend pointing to testnet:
-
-```shell
-yarn app:start:testnet
 ```
