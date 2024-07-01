@@ -4,9 +4,9 @@ This monorepo contains a suite of demo apps, all using Civic Pass to gate access
 
 ## Demo Deployments
 
-[EVM (Polygon Amoy)](https://airdrop-demo.civic.com/evm)
+[EVM (Polygon Amoy)](https://airdrop-demo.civic.me/evm)
 
-[Solana (devnet)](https://airdrop-demo.civic.com/solana)
+[Solana (devnet)](https://airdrop-demo.civic.me/solana)
 
 ## Getting Started
 
