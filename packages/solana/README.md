@@ -1,4 +1,4 @@
-# Solana Civic Workshop - Airdrop
+# Solana Civic Demo - Airdrop
 
 A simple airdrop program to demonstrate the use of Civic to protect on-chain assets.
 

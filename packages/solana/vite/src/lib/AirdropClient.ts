@@ -1,7 +1,7 @@
 import { Keypair, PublicKey, SystemProgram, TransactionSignature } from "@solana/web3.js";
-import { AnchorProvider, IdlAccounts, Program } from "@coral-xyz/anchor";
-import { IDL, WorkshopSolanaAirdrop } from "./types/gated_airdrop";
-import BN from "bn.js";
+import { AnchorProvider, IdlAccounts, Program, BN } from "@coral-xyz/anchor";
+import { GatedAirdrop } from "../types/gated_airdrop";
+import GatedAirdropIDL from "../types/gated_airdrop.json";
 import {
   getAssociatedTokenAddressSync, TOKEN_PROGRAM_ID,
   createInitializeMint2Instruction,
@@ -21,11 +21,11 @@ const AMOUNT = 1;
 
 export class AirdropClient {
   constructor(
-    readonly program: Program<WorkshopSolanaAirdrop>,
+    readonly program: Program<GatedAirdrop>,
     readonly authority: PublicKey,
-    readonly airdrop: IdlAccounts<WorkshopSolanaAirdrop>['airdrop'],
+    readonly airdrop: IdlAccounts<GatedAirdrop>['airdrop'],
     readonly airdropAddress: PublicKey,
-    readonly ticket: IdlAccounts<WorkshopSolanaAirdrop>['ticket'] | null,
+    readonly ticket: IdlAccounts<GatedAirdrop>['ticket'] | null,
     readonly ticketAddress: PublicKey,
   ) {
     console.log("Created new client...")
@@ -43,7 +43,7 @@ export class AirdropClient {
   }
 
   static async get(provider: AnchorProvider, airdropAddress: PublicKey): Promise<AirdropClient | undefined> {
-    const program = new Program<WorkshopSolanaAirdrop>(IDL, PROGRAM_ID, provider);
+    const program = new Program<GatedAirdrop>(GatedAirdropIDL as GatedAirdrop, provider);
     const airdrop = await program.account.airdrop.fetchNullable(airdropAddress);
 
     if (!airdrop) return undefined;
@@ -59,7 +59,7 @@ export class AirdropClient {
   }
 
   static async create(provider: AnchorProvider):Promise<AirdropClient> {
-    const program = new Program<WorkshopSolanaAirdrop>(IDL, PROGRAM_ID, provider);
+    const program = new Program<GatedAirdrop>(GatedAirdropIDL as GatedAirdrop, provider);
     const newMint = Keypair.generate();
     const newAirdrop = Keypair.generate();
 
@@ -82,7 +82,11 @@ export class AirdropClient {
     ];
 
     // create the airdrop instance
-    await program.methods.initialize(newMint.publicKey, CHOSEN_PASS, new BN(AMOUNT)).accounts({
+    await program.methods.initialize(
+        newMint.publicKey,
+        CHOSEN_PASS,
+        new BN(AMOUNT)
+    ).accounts({
       airdrop: newAirdrop.publicKey,
       authority: provider.publicKey,
     }).preInstructions(mintIxes)
@@ -101,10 +105,6 @@ export class AirdropClient {
     return this.program.methods.claim().accounts({
         payer: this.authority,
         airdrop: this.airdropAddress,
-        mint: this.airdrop.mint,
-        mintAuthority: this.mintAuthority,
-        ticket: this.ticketAddress,
-        recipientTokenAccount: getAssociatedTokenAddressSync(this.airdrop.mint, this.authority),
         recipient: this.authority,
         gatewayToken
     }).rpc();
