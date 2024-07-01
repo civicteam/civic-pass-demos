@@ -17,6 +17,8 @@ import { CreateMintStep } from "./components/CreateMintStep";
 import { IntroStep } from "./components/IntroStep";
 import { ProfileView } from "./components/ProfileView";
 
+import civicLogoOrange from "./civic-logo-orange.svg"
+
 const Admin = () => {
     const { client, createNewAirdrop } = useAirdrop();
 
@@ -74,7 +76,7 @@ const Content = () => {
                 <WalletMultiButton />
             </div>
             <div className="flex flex-col items-center justify-center pb-4">
-                <img src={'/civic-logo-orange.svg'} className="pr-4 w-48 h-48"/>
+                <img src={civicLogoOrange} className="pr-4 w-48 h-48"/>
                 <div className="text-2xl">Airdrop Demo</div>
             </div>
         </div>

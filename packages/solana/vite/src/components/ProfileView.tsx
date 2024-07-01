@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { CivicProfile, Profile } from "@civic/profile";
 import user from "../user.jpg";
 import { ScoreView } from "./ScoreView";
+import twitterLogo from "./twitter.svg"
 
 export const ProfileView = () => {
   const wallet = useAnchorWallet();
@@ -23,7 +24,7 @@ export const ProfileView = () => {
     </a>
     {twitter && <div className="pr-5 pl-5">
       <a href={"https://twitter.com/" + twitter.value} target="_blank">
-        <img src={"/twitter.svg"} alt="twitter" className="w-8 h-8" />
+        <img src={twitterLogo} alt="twitter" className="w-8 h-8" />
       </a>
     </div>}
     <ScoreView />
