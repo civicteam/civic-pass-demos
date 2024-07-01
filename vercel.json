@@ -1,0 +1,16 @@
+{
+  "rewrites": [
+    {
+      "source": "/solana/:path*",
+      "destination": "civic-pass-demos-solana-vite.vercel.app"
+    },
+    {
+      "source": "/evm/:path*",
+      "destination": "civic-pass-demos-evm-vite.vercel.app"
+    },
+    {
+      "source": "/",
+      "destination": "civic-pass-demos-evm-vite.vercel.app"
+    }
+  ]
+}
