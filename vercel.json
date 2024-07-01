@@ -2,15 +2,15 @@
   "rewrites": [
     {
       "source": "/solana/:path*",
-      "destination": "https://civic-pass-demos-solana-vite.vercel.app"
+      "destination": "https://civic-pass-demos-solana-vite.vercel.app/:path*"
     },
     {
       "source": "/evm/:path*",
-      "destination": "https://civic-pass-demos-evm-vite.vercel.app"
+      "destination": "https://civic-pass-demos-evm-vite.vercel.app/:path*"
     },
     {
-      "source": "/",
-      "destination": "https://civic-pass-demos-evm-vite.vercel.app"
+      "source": "/:path*",
+      "destination": "https://civic-pass-demos-evm-vite.vercel.app/:path*"
     }
   ]
 }
