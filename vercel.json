@@ -11,7 +11,7 @@
     ],
   "redirects": [{
       "source": "/",
-      "destination": "https://civic-pass-demos-evm-vite.vercel.app"
+      "destination": "/evm"
     }
   ]
 }
