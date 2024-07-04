@@ -1,12 +1,8 @@
-import { Keypair, PublicKey, SystemProgram, TransactionSignature } from "@solana/web3.js";
+import { PublicKey, TransactionSignature } from "@solana/web3.js";
 import { AnchorProvider, IdlAccounts, Program, BN } from "@coral-xyz/anchor";
 import { GatedAirdrop } from "../types/gated_airdrop";
 import GatedAirdropIDL from "../types/gated_airdrop.json";
-import {
-  getAssociatedTokenAddressSync, TOKEN_PROGRAM_ID,
-  createInitializeMint2Instruction,
-  getMinimumBalanceForRentExemptMint, MINT_SIZE
-} from "@solana/spl-token";
+import { getAssociatedTokenAddressSync } from "@solana/spl-token";
 
 const PROGRAM_ID = new PublicKey("air4tyw7S12bvdRtgoLgyQXuBfoLrjBS7Fg4r91zLb1");
 
