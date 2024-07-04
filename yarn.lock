@@ -368,14 +368,14 @@
     prop-types "^15.8.1"
     ramda "^0.30.0"
 
-"@civic/ethereum-gateway-react@^1.2.4":
-  version "1.2.4"
-  resolved "https://registry.yarnpkg.com/@civic/ethereum-gateway-react/-/ethereum-gateway-react-1.2.4.tgz#a53bf728756c15b4f97c8379ec622be146d858b0"
-  integrity sha512-qKKEN0BZ6it+2gDMP4hAeQdFmsC10h8xjZ8advnJRROTUE69ZrKRPq00taRQeVN7GjEiDl3sZDVf2kL0txbOVQ==
+"@civic/ethereum-gateway-react@^1.2.5":
+  version "1.2.5"
+  resolved "https://registry.yarnpkg.com/@civic/ethereum-gateway-react/-/ethereum-gateway-react-1.2.5.tgz#e551a5f33d3304d3ec439ffe0739d7333a14298d"
+  integrity sha512-ecvFD4NPnq3pVy6rWJLLS8NVf869yQ+A4f3+fC0bWmiJVjM+Ckw3a1gF8ZcFnpZsI2/PEiV9s73hotS3Y5sFTQ==
   dependencies:
     "@civic/ethereum-gateway-chain-client" "0.0.1-beta.1"
-    "@civic/gateway-client-core" "1.0.1"
-    "@civic/gateway-client-react" "1.0.1"
+    "@civic/gateway-client-core" "1.0.2"
+    "@civic/gateway-client-react" "1.0.2"
     "@identity.com/prove-ethereum-wallet" "1.1.1"
     ethers "^6.12.1"
     prop-types "^15.8.1"
@@ -406,12 +406,38 @@
     zustand "^4.5.2"
     zustand-computed-state "^0.1.3"
 
+"@civic/gateway-client-core@1.0.2":
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/@civic/gateway-client-core/-/gateway-client-core-1.0.2.tgz#53fd1ee27f1c53508aaf4c548228e2c3da1d9daf"
+  integrity sha512-z0f+Y8DX3baQ4Plb2YZjsSEBC9VGZ1PU90Oraeds2vW7qiXNnd1K2KoWVZNljbUEfCN9M1Wsf0x5yNq8l/fikQ==
+  dependencies:
+    fetch-retry "^6.0.0"
+    immer "^10.0.4"
+    isomorphic-fetch "^3.0.0"
+    ramda "^0.30.0"
+    uuid "^9.0.1"
+    zustand "^4.5.2"
+    zustand-computed-state "^0.1.3"
+
 "@civic/gateway-client-react@1.0.1":
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/@civic/gateway-client-react/-/gateway-client-react-1.0.1.tgz#5632ffdbfd54276e36bccd1e54af592abb4247b0"
   integrity sha512-O4AdN3tmkGSfJfiWw5Ez0afIQuuivM9rPkFN/CoMo7+Utobf79AMZnw+HC3i3Czf3bBXwgBKaQi7C3R4tTyO0g==
   dependencies:
     "@civic/gateway-client-core" "1.0.1"
+    fetch-retry "^5.0.6"
+    iframe-resizer-react "^1.0.8"
+    ramda "^0.28.0"
+    styled-components "^5.3.1"
+    uuid "^9.0.1"
+    zustand "^4.5.2"
+
+"@civic/gateway-client-react@1.0.2":
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/@civic/gateway-client-react/-/gateway-client-react-1.0.2.tgz#b11b38e5af1b937bb5fed0483202e813e3cef77f"
+  integrity sha512-G/2qOxD4mVqX3J1WfdLsfmGvztFwWufXKmjtO4FuDVHh5MT4zJtTsZaRAvO2leqxb3bipkx07mxgvkoukFzGDg==
+  dependencies:
+    "@civic/gateway-client-core" "1.0.2"
     fetch-retry "^5.0.6"
     iframe-resizer-react "^1.0.8"
     ramda "^0.28.0"

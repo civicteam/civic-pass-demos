@@ -9,14 +9,18 @@ import toast from "react-hot-toast";
 type AirdropContextType = {
   client: AirdropClient | undefined;
   balance: number | null;
-  createNewAirdrop: () => Promise<void>;
-  claim: () => Promise<string>;
+  claim: () => Promise<void>;
+  isConfirming: boolean;
+  error: Error | undefined;
+  txHash: string | undefined;
 }
 export const AirdropContext = createContext<AirdropContextType>({
   client: undefined,
-  createNewAirdrop: async () => {},
-  claim: async () => "",
-  balance: null
+  claim: async () => {},
+  isConfirming: false,
+  balance: null,
+  error: undefined,
+  txHash: undefined
 });
 
 const safeParsePublicKey = (string: string) => {
@@ -33,10 +37,13 @@ export const AirdropProvider: FC<{ children: ReactNode }> = ({ children }) => {
   const { gatewayToken } = useGateway();
   const [client, setClient] = useState<AirdropClient | undefined>();
   const [balance, setBalance] = useState<number | null>(null);
-  const addressFromUrl = useMemo(
-    () => safeParsePublicKey(window.location.href.split("#")[1]),
+  const airdropAddress = useMemo(
+    () => safeParsePublicKey(import.meta.env.VITE_AIRDROP_ADDRESS ?? window.location.href.split("#")[1]),
     [window.location.href]
   );
+  const [isConfirming, setIsConfirming] = useState(false);
+  const [txHash, setTxHash] = useState<string>();
+  const [error, setError] = useState<Error>();
 
   const provider = useMemo(() => {
     if (!wallet) return undefined;
@@ -48,23 +55,15 @@ export const AirdropProvider: FC<{ children: ReactNode }> = ({ children }) => {
   }, [wallet])
 
   useEffect(() => {
-    if (!provider || !addressFromUrl || client) return;
-    AirdropClient.get(provider, addressFromUrl).then((client) => {
+    if (!provider || !airdropAddress || client) return;
+    AirdropClient.get(provider, airdropAddress).then((client) => {
       setClient(client);
 
       if (client) {
         client.getBalance().then(setBalance);
       }
     });
-  }, [addressFromUrl, provider, client]);
-
-  const createNewAirdrop = async () => {
-    if (!provider) return undefined;
-    await AirdropClient.create(provider).then(client => {
-      window.location.href = `#${client.airdropAddress.toString()}`;
-      window.location.reload();
-    });
-  }
+  }, [airdropAddress, provider, client]);
 
   const claim = async () => {
     if (!gatewayToken || !client) throw new Error("No gateway token");
@@ -76,17 +75,20 @@ export const AirdropProvider: FC<{ children: ReactNode }> = ({ children }) => {
       toast.success(<a href={`https://explorer.solana.com/tx/${txSig}?cluster=devnet`} target="_blank">Airdrop
         complete. Explorer</a>);
 
+      setIsConfirming(true);
       client.getBalance().then(setBalance);
 
-      return txSig;
+      setTxHash(txSig);
     } catch (e) {
       toast.error("Airdrop failed: " + (e as Error).message);
-      throw e;
+      setError(e as Error)
+    } finally {
+      setIsConfirming(false);
     }
   }
 
   return (
-    <AirdropContext.Provider value={{ client, createNewAirdrop, balance, claim }}>
+    <AirdropContext.Provider value={{ client, balance, claim, isConfirming, error, txHash }}>
       {children}
     </AirdropContext.Provider>
   );

@@ -7,10 +7,11 @@
     {
       "source": "/evm/:path*",
       "destination": "https://civic-pass-demos-evm-vite.vercel.app/:path*"
-    },
-    {
-      "source": "/:path*",
-      "destination": "https://civic-pass-demos-evm-vite.vercel.app/:path*"
+    }
+    ],
+  "redirects": [{
+      "source": "/",
+      "destination": "https://civic-pass-demos-evm-vite.vercel.app"
     }
   ]
 }

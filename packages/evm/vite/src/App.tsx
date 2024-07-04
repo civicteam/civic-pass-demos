@@ -2,61 +2,66 @@ import './App.css';
 import {useAirdrop} from './AirdropContext';
 import {ConnectButton} from '@rainbow-me/rainbowkit';
 import {GatewayStatus, IdentityButton, useGateway} from '@civic/ethereum-gateway-react';
-import Ticket from "./ticket.svg?react";
+import Balloon from "./balloon.svg?react";
+import {FC, PropsWithChildren} from "react";
+
+const Notification: FC<PropsWithChildren<{}>> = ({children}) => <div className="notification">
+    {children}
+</div>
 
 const Dashboard = () => {
-    const { balance, totalSupply, claim, isConfirming, txHash, error } = useAirdrop();
-    const { gatewayStatus } = useGateway();
+    const {balance, totalSupply, claim, isConfirming, txHash, error} = useAirdrop();
+    const {gatewayStatus} = useGateway();
 
     const usersPassIsActive = gatewayStatus === GatewayStatus.ACTIVE;
 
-    return (<div id="main">
+    return (
+        <>
+            <IdentityButton className="civic-button app-button"/>
 
-        <Ticket />
-        <h1>Claim Airdrop</h1>
+            {!balance &&
+                <button
+                    className="app-button"
+                    disabled={!usersPassIsActive}
+                    onClick={claim}>{usersPassIsActive ? "Claim Airdrop" : "Verify first!"}
+                </button>
+            }
 
-        <IdentityButton/>
+            {(!!balance || !usersPassIsActive) &&
+                <a onClick={() => claim({gasLimit: 3000000})}>Attempt to get Airdrop without Civic Pass</a>}
 
-        {!usersPassIsActive && <div>Verify you are a unique person before entering</div>}
 
-        {!balance &&
-            <button
-                disabled={!usersPassIsActive}
-                onClick={claim}>{usersPassIsActive ? "Claim" : "Verify first!"}
-            </button>
-        }
+            {isConfirming && <Notification>Claiming</Notification>}
 
-        {(!!balance || !usersPassIsActive) &&
-            <button onClick={() => claim({gasLimit: 3000000})}>I don't care, try to claim anyway!</button>}
+            {!!balance && <Notification>Congratulations, you have a token!</Notification>}
+            {txHash && <Notification><>Transaction: {txHash}</>
+            </Notification>}
+            {error && <Notification><>Error: {error.message}</>
+            </Notification>}
 
-        {isConfirming && <p><>Claiming...</>
-
-        </p>}
-
-        {!!balance && <p><>Congratulations, you have a token!</>
-        </p>}
-        {txHash && <p><>Transaction: {txHash}</>
-        </p>}
-        {error && <p><>Error: {error.message}</>
-        </p>}
-        <div>Claimed so far: {totalSupply?.toString() ?? 0}</div>
-    </div>)
+            <Notification>
+                <h3>Claimed</h3>
+                <h2>{totalSupply?.toString() ?? 0} Airdrops</h2>
+            </Notification>
+        </>)
 }
 
 function App() {
     return (
         <div className="App">
-            <div className="container" style={{
-                display: "flex",
-                flexDirection: "column",
-                alignItems: "center",
-                justifyContent: "center",
-                height: "100vh"
-            }}>
-                <ConnectButton showBalance={false}/>
-                <hr/>
-                <Dashboard/>
-            </div>
+            <Balloon/>
+
+            <h1>Claim Airdrop</h1>
+
+            <p>Get a <a
+                href="https://support.civic.com/hc/en-us/articles/4409219336599-What-is-Civic-Pass-and-how-does-it-work"
+            >
+                Civic Pass
+            </a> to verify you are a unique person and get the airdrop.
+            </p>
+
+            <ConnectButton showBalance={false}/>
+            <Dashboard/>
         </div>
     );
 }

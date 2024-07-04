@@ -1,6 +1,3 @@
-[workspace]
-types = "app/src/lib/types"
-
 [features]
 seeds = false
 skip-lint = false
