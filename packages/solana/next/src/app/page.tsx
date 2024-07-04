@@ -1,21 +1,64 @@
 'use client';
 
-import { CivicPassProvider } from "@/components/CivicPassProvider";
-import WalletMultiButton from "@/components/WalletMultiButton";
-import WalletProvider from "@/components/WalletProvider";
-import { IdentityButton } from "@civic/solana-gateway-react";
+import {GatewayStatus, IdentityButton, useGateway} from "@civic/solana-gateway-react";
+import {WalletMultiButton} from "@solana/wallet-adapter-react-ui";
+import balloon from './balloon.svg';
+import Image from "next/image";
+import {FC, PropsWithChildren} from "react";
+import {useAirdrop} from "@/components/AirdropProvider";
 
-export default async function Home() {
-  return (
-      <WalletProvider>
-        <CivicPassProvider>
-          <div className="flex min-h-screen items-center justify-center">
-            <main className="flex flex-col items-center justify-between p-6 max-h-[200px]">
-              <WalletMultiButton/>
-              <IdentityButton/>
-            </main>
-          </div>
-        </CivicPassProvider>
-      </WalletProvider>
-  )
+const Balloon: FC = () => <Image src={balloon} alt="balloon" width={269} height={304}/>
+
+const Notification: FC<PropsWithChildren<{}>> = ({children}) => <div className="notification">
+    {children}
+</div>
+
+const Dashboard = () => {
+    const {balance, claim, isConfirming, error, txHash} = useAirdrop();
+    const {gatewayStatus} = useGateway();
+
+    const usersPassIsActive = gatewayStatus === GatewayStatus.ACTIVE;
+
+    return (
+        <>
+            <IdentityButton className="civic-button app-button"/>
+
+            <button
+                className="app-button"
+                disabled={!usersPassIsActive}
+                onClick={claim}>{usersPassIsActive ? "Claim Airdrop" : "Verify first!"}
+            </button>
+
+            {(!!balance || !usersPassIsActive) &&
+                <a onClick={() => claim()}>Attempt to get Airdrop without Civic Pass</a>}
+
+
+            {isConfirming && <Notification>Claiming</Notification>}
+
+            {!!balance && <Notification>Congratulations, you have a token!</Notification>}
+            {txHash && <Notification><>Transaction: {txHash}</>
+            </Notification>}
+            {error && <Notification><>Error: {error.message}</>
+            </Notification>}
+        </>)
+}
+
+export default function Home() {
+    return (
+        <div className="App">
+            <Balloon/>
+
+            <h1>Claim Airdrop</h1>
+
+            <p>Get a <a
+                href="https://support.civic.com/hc/en-us/articles/4409219336599-What-is-Civic-Pass-and-how-does-it-work"
+            >
+                Civic Pass
+            </a> to verify you are a unique person and get the airdrop.
+            </p>
+
+            <WalletMultiButton/>
+            <Dashboard/>
+        </div>
+    )
 };

@@ -192,8 +192,7 @@ export type GatedAirdrop = {
           "name": "gatewayToken"
         },
         {
-          "name": "recipient",
-          "signer": true
+          "name": "recipient"
         },
         {
           "name": "rent",

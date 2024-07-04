@@ -28,10 +28,6 @@ const Dashboard = () => {
                 </button>
             }
 
-            {(!!balance || !usersPassIsActive) &&
-                <a onClick={() => claim()}>Attempt to get Airdrop without Civic Pass</a>}
-
-
             {isConfirming && <Notification>Claiming</Notification>}
 
             {!!balance && <Notification>Congratulations, you have a token!</Notification>}

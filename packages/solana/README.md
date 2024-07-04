@@ -2,8 +2,6 @@
 
 A simple airdrop program to demonstrate the use of Civic to protect on-chain assets.
 
-![img.png](img.png)
-
 ## Run Locally
 
 Note: by default, the UI will point to devnet, where the program is deployed with program ID:

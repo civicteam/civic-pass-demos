@@ -1,7 +1,5 @@
-import {Connection, Keypair, Transaction} from "@solana/web3.js";
-
-const connection = new Connection(process.env.PRIVATE_RPC ?? "https://api.devnet.solana.com", "processed");
-const keypair = Keypair.fromSecretKey(Buffer.from(process.env.PAYER_SECRET_KEY ?? '', 'base64'));
+import {Transaction} from "@solana/web3.js";
+import {connection, keypair} from "@/lib/solana";
 
 const acceptablePrograms = [
     "gatem74V238djXdzWnJf94Wo1DcnuGkfijbf3AuBhfs", // Gateway program

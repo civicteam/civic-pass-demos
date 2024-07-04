@@ -1,6 +1,5 @@
 'use client';
-
-import React, {FC, PropsWithChildren, useState} from "react";
+import React, {FC, PropsWithChildren} from "react";
 import {GatewayProvider} from "@civic/solana-gateway-react";
 import {useConnection, useWallet} from "@solana/wallet-adapter-react";
 import {PublicKey, Transaction} from "@solana/web3.js";
@@ -20,7 +19,6 @@ export const CivicPassProvider: FC<PropsWithChildren> = ({ children }) => {
         const serializedTransaction = Buffer.from(transaction.serialize({
             requireAllSignatures: false,
         })).toString('base64');
-        console.log("blockhash", transaction.recentBlockhash)
         const response = await fetch('/api', {
             method: 'POST',
             headers: {
@@ -32,19 +30,13 @@ export const CivicPassProvider: FC<PropsWithChildren> = ({ children }) => {
         return signature;
     };
 
-    const [frr, setFrr] = useState(false);
-    // turn it true after 1 second
-    setTimeout(() => setFrr(true), 1000 * 1);
-
     return (
         <GatewayProvider
             wallet={wallet}
             connection={connection}
             gatekeeperNetwork={DUMMY_PASS}
-            // stage={"dev"}
-            // cluster="devnet"
+            cluster="devnet"
             payer={PAYER}
-            forceRequireRefresh={frr}
             handleTransaction={handleTransaction}>
             {children}
         </GatewayProvider>
