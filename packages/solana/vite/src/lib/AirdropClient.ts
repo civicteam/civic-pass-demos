@@ -11,10 +11,7 @@ import {
 const PROGRAM_ID = new PublicKey("air4tyw7S12bvdRtgoLgyQXuBfoLrjBS7Fg4r91zLb1");
 
 export const UNIQUENESS_PASS = new PublicKey("uniqobk8oGh4XBLMqM68K8M2zNu3CdYX7q5go7whQiv")
-export const CAPTCHA_PASS = new PublicKey("ignREusXmGrscGNUesoU9mxfds9AiYTezUKex2PsZV6")
-
 export const LIVENESS_PASS = new PublicKey("vaa1QRNEBb1G2XjPohqGWnPsvxWnwwXF67pdjrhDSwM")
-
 const CHOSEN_PASS = UNIQUENESS_PASS;
 
 const AMOUNT = 1;
@@ -56,47 +53,6 @@ export class AirdropClient {
     const ticket = await program.account.ticket.fetchNullable(ticketAddress)
 
     return new AirdropClient(program, provider.publicKey, airdrop, airdropAddress, ticket, ticketAddress);
-  }
-
-  static async create(provider: AnchorProvider):Promise<AirdropClient> {
-    const program = new Program<GatedAirdrop>(GatedAirdropIDL as GatedAirdrop, provider);
-    const newMint = Keypair.generate();
-    const newAirdrop = Keypair.generate();
-
-    // create new mint
-    const lamports = await getMinimumBalanceForRentExemptMint(provider.connection);
-    const mintIxes = [
-      SystemProgram.createAccount({
-        fromPubkey: provider.publicKey,
-        newAccountPubkey: newMint.publicKey,
-        space: MINT_SIZE,
-        lamports,
-        programId: TOKEN_PROGRAM_ID,
-      }),
-      createInitializeMint2Instruction(
-        newMint.publicKey,
-        0,
-        AirdropClient.calculateMintAuthority(newAirdrop.publicKey),
-        null
-      )
-    ];
-
-    // create the airdrop instance
-    await program.methods.initialize(
-        newMint.publicKey,
-        CHOSEN_PASS,
-        new BN(AMOUNT)
-    ).accounts({
-      airdrop: newAirdrop.publicKey,
-      authority: provider.publicKey,
-    }).preInstructions(mintIxes)
-      .signers([newAirdrop, newMint])
-      .rpc();
-
-    return AirdropClient.get(provider, newAirdrop.publicKey).then((client) => {
-      if (!client) throw new Error("Failed to create airdrop");
-      return client;
-    });
   }
 
   async claim(gatewayToken: PublicKey): Promise<TransactionSignature> {
