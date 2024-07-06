@@ -69,7 +69,7 @@
     "@jridgewell/trace-mapping" "^0.3.25"
     jsesc "^2.5.1"
 
-"@babel/helper-annotate-as-pure@^7.18.6", "@babel/helper-annotate-as-pure@^7.22.5", "@babel/helper-annotate-as-pure@^7.24.7":
+"@babel/helper-annotate-as-pure@^7.22.5", "@babel/helper-annotate-as-pure@^7.24.7":
   version "7.24.7"
   resolved "https://registry.yarnpkg.com/@babel/helper-annotate-as-pure/-/helper-annotate-as-pure-7.24.7.tgz#5373c7bc8366b12a033b4be1ac13a206c6656aab"
   integrity sha512-BaDeOonYvhdKw+JoMVkAixAAJzG2jVPIwWoKBPdYuY9b452e2rPuI9QPYh3KpofZ3pW2akOmwZLOiOsHMiqRAg==
@@ -87,7 +87,7 @@
     lru-cache "^5.1.1"
     semver "^6.3.1"
 
-"@babel/helper-create-class-features-plugin@^7.21.0", "@babel/helper-create-class-features-plugin@^7.24.7":
+"@babel/helper-create-class-features-plugin@^7.24.7":
   version "7.24.7"
   resolved "https://registry.yarnpkg.com/@babel/helper-create-class-features-plugin/-/helper-create-class-features-plugin-7.24.7.tgz#2eaed36b3a1c11c53bdf80d53838b293c52f5b3b"
   integrity sha512-kTkaDl7c9vO80zeX1rJxnuRpEsD5tA81yh11X1gQo+PhSti3JS+7qeZo9U4RHobKRiFPKaGK3svUAeb8D0Q7eg==
@@ -158,7 +158,7 @@
   dependencies:
     "@babel/types" "^7.24.7"
 
-"@babel/helper-plugin-utils@^7.14.5", "@babel/helper-plugin-utils@^7.20.2", "@babel/helper-plugin-utils@^7.24.7":
+"@babel/helper-plugin-utils@^7.24.7":
   version "7.24.7"
   resolved "https://registry.yarnpkg.com/@babel/helper-plugin-utils/-/helper-plugin-utils-7.24.7.tgz#98c84fe6fe3d0d3ae7bfc3a5e166a46844feb2a0"
   integrity sha512-Rq76wjt7yz9AAc1KnlRKNAi/dMSVWgDRx43FHoJEbcYU6xOWaE2dVPwcdTukJrjxS65GITyfbvEYHvkirZ6uEg==
@@ -233,29 +233,12 @@
   resolved "https://registry.yarnpkg.com/@babel/parser/-/parser-7.24.7.tgz#9a5226f92f0c5c8ead550b750f5608e766c8ce85"
   integrity sha512-9uUYRm6OqQrCqQdG1iCBwBPZgN8ciDBro2nIOFaiRz1/BCxaI7CNvQbDHvsArAC7Tw9Hda/B3U+6ui9u4HWXPw==
 
-"@babel/plugin-proposal-private-property-in-object@^7.21.11":
-  version "7.21.11"
-  resolved "https://registry.yarnpkg.com/@babel/plugin-proposal-private-property-in-object/-/plugin-proposal-private-property-in-object-7.21.11.tgz#69d597086b6760c4126525cfa154f34631ff272c"
-  integrity sha512-0QZ8qP/3RLDVBwBFoWAwCtgcDZJVwA5LUJRZU8x2YFfKNuFq161wK3cuGrALu5yiPu+vzwTAg/sMWVNeWeNyaw==
-  dependencies:
-    "@babel/helper-annotate-as-pure" "^7.18.6"
-    "@babel/helper-create-class-features-plugin" "^7.21.0"
-    "@babel/helper-plugin-utils" "^7.20.2"
-    "@babel/plugin-syntax-private-property-in-object" "^7.14.5"
-
 "@babel/plugin-syntax-jsx@^7.22.5", "@babel/plugin-syntax-jsx@^7.24.7":
   version "7.24.7"
   resolved "https://registry.yarnpkg.com/@babel/plugin-syntax-jsx/-/plugin-syntax-jsx-7.24.7.tgz#39a1fa4a7e3d3d7f34e2acc6be585b718d30e02d"
   integrity sha512-6ddciUPe/mpMnOKv/U+RSd2vvVy+Yw/JfBB0ZHYjEZt9NLHmCUylNYlsbqCCS1Bffjlb0fCwC9Vqz+sBz6PsiQ==
   dependencies:
     "@babel/helper-plugin-utils" "^7.24.7"
-
-"@babel/plugin-syntax-private-property-in-object@^7.14.5":
-  version "7.14.5"
-  resolved "https://registry.yarnpkg.com/@babel/plugin-syntax-private-property-in-object/-/plugin-syntax-private-property-in-object-7.14.5.tgz#0dc6671ec0ea22b6e94a1114f857970cd39de1ad"
-  integrity sha512-0wVnp9dxJ72ZUJDV27ZfbSj6iHLoytYZmh3rFcxNnvsJF3ktkzLDZPy/mA17HGsaQT3/DQsWYX1f1QGWkCoVUg==
-  dependencies:
-    "@babel/helper-plugin-utils" "^7.14.5"
 
 "@babel/plugin-syntax-typescript@^7.24.7":
   version "7.24.7"
@@ -366,17 +349,6 @@
     punycode "^2.3.0"
     tweetnacl "^1.0.3"
 
-"@civic/common-gateway-react@0.12.0":
-  version "0.12.0"
-  resolved "https://registry.yarnpkg.com/@civic/common-gateway-react/-/common-gateway-react-0.12.0.tgz#6979f25f2f989744f66ab824747d3fcd89dc33fb"
-  integrity sha512-PbQAk5tv2BjOHJGWfrfvtQ0yG7yYkOJ8o+n8oBUy8ENnK+XcbFeji/Lg2jHArGJONk39DlV+UmBNuwEhTaXMlw==
-  dependencies:
-    fetch-retry "^5.0.6"
-    iframe-resizer-react "^1.1.0"
-    ramda "^0.28.0"
-    styled-components "^5.3.1"
-    uuid "^9.0.1"
-
 "@civic/did-registry@0.0.6-alpha.2":
   version "0.0.6-alpha.2"
   resolved "https://registry.yarnpkg.com/@civic/did-registry/-/did-registry-0.0.6-alpha.2.tgz#6d2ee70a8d784194978c99c3387072f63503be4d"
@@ -434,10 +406,10 @@
     zustand "^4.5.2"
     zustand-computed-state "^0.1.3"
 
-"@civic/gateway-client-core@1.0.3":
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/@civic/gateway-client-core/-/gateway-client-core-1.0.3.tgz#f16ecc699a1f5c9d8f8e5567e5d8755f47e97e56"
-  integrity sha512-7RHONTThCH3nwa/Nv+q6WA85ANQwsf5zwTh3/8IwT+PlJ8Vi4eROleI4Oxa4JtcgTIPKF3DoiHdx6Z/X9JuWtA==
+"@civic/gateway-client-core@1.0.4-beta.0":
+  version "1.0.4-beta.0"
+  resolved "https://registry.yarnpkg.com/@civic/gateway-client-core/-/gateway-client-core-1.0.4-beta.0.tgz#65fafa2addbbee2d435270f619f1a392f291dad8"
+  integrity sha512-8G1MVq7xlVJvnxZOvzPbyW8WmWujkv+IGJgYakBG4xkyJpWadSq1DISxX7L68zIKuKl+NHbed2S0NcAvV6lSuQ==
   dependencies:
     fetch-retry "^6.0.0"
     immer "^10.0.4"
@@ -460,12 +432,12 @@
     uuid "^9.0.1"
     zustand "^4.5.2"
 
-"@civic/gateway-client-react@1.0.3":
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/@civic/gateway-client-react/-/gateway-client-react-1.0.3.tgz#0f37025382ed885d4ad22c4ae99a9c2f14ddc273"
-  integrity sha512-lDibqH+Si/OnmYtVz2H+7c4W2ds4brrFg4L7WfyAcSXIXNg+pzsrFb06jX+c0abZlZaXbUfaDY0rClqRpgrQcA==
+"@civic/gateway-client-react@1.0.4-beta.0":
+  version "1.0.4-beta.0"
+  resolved "https://registry.yarnpkg.com/@civic/gateway-client-react/-/gateway-client-react-1.0.4-beta.0.tgz#776d4744cdb06f79bb449c3158e85fbbb7271e25"
+  integrity sha512-wAIBeisaurJhg69/iv73ehs3nI8CpCwwqjbbE01HVG6b84fRl2ksLpUiL8UssYSr2AkSx60Lk/zwIpi6hXiS1g==
   dependencies:
-    "@civic/gateway-client-core" "1.0.3"
+    "@civic/gateway-client-core" "1.0.4-beta.0"
     fetch-retry "^5.0.6"
     iframe-resizer-react "^1.0.8"
     ramda "^0.28.0"
@@ -517,25 +489,13 @@
     prop-types "^15.8.1"
     ramda "^0.30.0"
 
-"@civic/solana-gateway-react@^0.17.0":
-  version "0.17.0"
-  resolved "https://registry.yarnpkg.com/@civic/solana-gateway-react/-/solana-gateway-react-0.17.0.tgz#49d667b5b0e0a9c03d5acd7ff1a3ded8627eb969"
-  integrity sha512-7ScqOqE36Wzm6jxnuXJa1tQCyENM01j6Tb3Ul52rDSeA2F50iZzpolI3QJvmzOwafjXkD31fKgZjafer/bUTjw==
+"@civic/solana-gateway-react@^1.0.7-beta.0":
+  version "1.0.7-beta.0"
+  resolved "https://registry.yarnpkg.com/@civic/solana-gateway-react/-/solana-gateway-react-1.0.7-beta.0.tgz#48eddbde8156bc3fc1744d99bf1092d52e81adb8"
+  integrity sha512-yNJqiRB6+hzaq44HI3fDKpJTGeK4ZRvUoPOpZZ1wKY2FCkRHAUwkZTGzAmNOgqUSmyD1EObRMap3s524GmUcDA==
   dependencies:
-    "@civic/common-gateway-react" "0.12.0"
-    "@identity.com/prove-solana-wallet" "0.4.2"
-    "@identity.com/solana-gateway-ts" "^0.12.0"
-    "@solana/web3.js" "^1.73.0"
-    prop-types "^15.8.1"
-    ramda "^0.28.0"
-
-"@civic/solana-gateway-react@^1.0.4":
-  version "1.0.6"
-  resolved "https://registry.yarnpkg.com/@civic/solana-gateway-react/-/solana-gateway-react-1.0.6.tgz#cf67880dabfc16727bbf2d40b0ddc187aed3bf78"
-  integrity sha512-Sit9eGc0FLDtZyf/GEkBP7uzNGkKThhbO3v4pL9I7AzUSCyQGgxNoM9MDtFRmrh4IP8ghpPbhHepQg0EWuPoTw==
-  dependencies:
-    "@civic/gateway-client-core" "1.0.3"
-    "@civic/gateway-client-react" "1.0.3"
+    "@civic/gateway-client-core" "1.0.4-beta.0"
+    "@civic/gateway-client-react" "1.0.4-beta.0"
     "@civic/solana-gateway-chain-client" "0.0.1-beta.0"
     "@identity.com/prove-solana-wallet" "0.4.2"
     "@identity.com/solana-gateway-ts" "^0.13.0-alpha.0"
@@ -1398,18 +1358,6 @@
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/@identity.com/sol-did-idl/-/sol-did-idl-3.1.0.tgz#dfd00b0f80aeed25ff898a7bd95320df3abc337d"
   integrity sha512-umy6Adt9d7v50iduN02L5hzxK9742va0yZxFDsTopXcYAgTW/jQ/xsR5Q4VTuqJXtn6szhIO1q0hbNHScq22Cg==
-
-"@identity.com/solana-gateway-ts@^0.12.0":
-  version "0.12.0"
-  resolved "https://registry.yarnpkg.com/@identity.com/solana-gateway-ts/-/solana-gateway-ts-0.12.0.tgz#8954dfacd0c4f3b02437541d6ab15a8069a6814b"
-  integrity sha512-VF3sjYLu9mD2fvSyTfR07HYRz3LnEhZPtqZ53Jmm3+CnlabsVLLShSvCvPSz+4TQtD/4gNKMG1VAJenxBr8W5Q==
-  dependencies:
-    "@solana/web3.js" "^1.63.0"
-    async-retry "^1.3.3"
-    bn.js "^5.2.0"
-    borsh "^0.4.0"
-    bs58 "^5.0.0"
-    ramda "^0.27.1"
 
 "@identity.com/solana-gateway-ts@^0.13.0-alpha.0":
   version "0.13.0-alpha.1"
@@ -3301,7 +3249,7 @@
     "@solana/wallet-standard-core" "^1.1.1"
     "@solana/wallet-standard-wallet-adapter" "^1.1.2"
 
-"@solana/web3.js@^1.21.0", "@solana/web3.js@^1.32.0", "@solana/web3.js@^1.36.0", "@solana/web3.js@^1.59.1", "@solana/web3.js@^1.63.0", "@solana/web3.js@^1.63.1", "@solana/web3.js@^1.68.0", "@solana/web3.js@^1.73.0", "@solana/web3.js@^1.87.0", "@solana/web3.js@^1.87.6", "@solana/web3.js@^1.90.2", "@solana/web3.js@^1.91.4", "@solana/web3.js@^1.91.6", "@solana/web3.js@^1.93.4":
+"@solana/web3.js@^1.21.0", "@solana/web3.js@^1.32.0", "@solana/web3.js@^1.36.0", "@solana/web3.js@^1.59.1", "@solana/web3.js@^1.63.1", "@solana/web3.js@^1.68.0", "@solana/web3.js@^1.73.0", "@solana/web3.js@^1.87.0", "@solana/web3.js@^1.87.6", "@solana/web3.js@^1.90.2", "@solana/web3.js@^1.91.4", "@solana/web3.js@^1.91.6", "@solana/web3.js@^1.93.4":
   version "1.94.0"
   resolved "https://registry.yarnpkg.com/@solana/web3.js/-/web3.js-1.94.0.tgz#f662ce046f59cb294e8304beeb4d549c3ff05d73"
   integrity sha512-wMiBebzu5I2fTSz623uj6VXpWFhl0d7qJKqPFK2I4IBLTNUdv+bOeA4H7OBM7Gworv7sOvB3xibRql6l61MeqA==
@@ -8494,16 +8442,7 @@ iframe-resizer-react@^1.0.8:
     iframe-resizer "^4.3.11"
     warning "^4.0.3"
 
-iframe-resizer-react@^1.1.0:
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/iframe-resizer-react/-/iframe-resizer-react-1.1.1.tgz#bb6482e420c612206298892cbbc0182eb76cbf9f"
-  integrity sha512-s0EUUekv58FGbuWBanSCVsEKmmyBdWmdwQ8qx8g04jlNlCR7pNuDz7fw7zo5T5sdssl6yRMDl97NBdwD1gfDyQ==
-  dependencies:
-    "@babel/plugin-proposal-private-property-in-object" "^7.21.11"
-    iframe-resizer "^4.4.4"
-    warning "^4.0.3"
-
-iframe-resizer@^4.3.11, iframe-resizer@^4.4.4:
+iframe-resizer@^4.3.11:
   version "4.4.4"
   resolved "https://registry.yarnpkg.com/iframe-resizer/-/iframe-resizer-4.4.4.tgz#39f7cbbed2237295673fee0fd947d1338f0c6525"
   integrity sha512-9E4+pTpOPEeSz3P/o04uy5hpG+z/fy+BDzQnM3PT/G1zINRqgVJNdHgO8bJ8s8szLFztjKugnjtvZdvBJ5UXWQ==
