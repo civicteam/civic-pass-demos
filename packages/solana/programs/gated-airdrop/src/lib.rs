@@ -1,3 +1,5 @@
+mod anchor;
+
 use anchor_lang::prelude::*;
 use anchor_spl::{
     token::mint_to,
@@ -5,7 +7,7 @@ use anchor_spl::{
     associated_token::AssociatedToken,
     token::MintTo
 };
-use solana_gateway::Gateway;
+use crate::anchor::Pass;
 
 declare_id!("air4tyw7S12bvdRtgoLgyQXuBfoLrjBS7Fg4r91zLb1");
 
@@ -16,28 +18,14 @@ pub const MINT_AUTHORITY: &[u8] = b"mint_authority";
 pub mod gated_airdrop {
     use super::*;
 
-    pub fn initialize(ctx: Context<Initialize>, mint: Pubkey, gatekeeper_network: Pubkey, amount: u64) -> Result<()> {
+    pub fn initialize(ctx: Context<Initialize>, mint: Pubkey, pass_type: Pubkey, amount: u64) -> Result<()> {
         ctx.accounts.airdrop.mint = mint;
-        ctx.accounts.airdrop.gatekeeper_network = gatekeeper_network;
+        ctx.accounts.airdrop.pass_type = pass_type;
         ctx.accounts.airdrop.amount = amount;
         Ok(())
     }
 
     pub fn claim(ctx: Context<Claim>) -> Result<()> {
-        // check the pass
-        let gateway_token = ctx.accounts.gateway_token.to_account_info();
-        Gateway::verify_gateway_token_account_info(
-                &gateway_token,
-                &ctx.accounts.recipient.key,
-                &ctx.accounts.airdrop.gatekeeper_network,
-                None
-            ).map_err(|_e| {
-                msg!("Gateway token account verification failed");
-                ProgramError::InvalidArgument
-        })?;
-
-        msg!("Gateway token verification passed");
-
         // mint the tokens
         let airdrop = ctx.accounts.airdrop.key();
         let seeds = &[
@@ -112,8 +100,8 @@ pub struct Claim<'info> {
     )]
     pub recipient_token_account: Account<'info, TokenAccount>,
 
-    /// CHECK: Verified by the solana-gateway program
-    pub gateway_token: UncheckedAccount<'info>,
+    #[account(constraint = pass.valid(&recipient.key, &airdrop.pass_type))]
+    pub pass: Account<'info, Pass>,
 
     pub recipient: SystemAccount<'info>,
     pub rent: Sysvar<'info, Rent>,
@@ -126,7 +114,7 @@ pub struct Claim<'info> {
 #[derive(Default)]
 pub struct Airdrop {
     pub authority: Pubkey,
-    pub gatekeeper_network: Pubkey,
+    pub pass_type: Pubkey,
     pub mint: Pubkey,
     pub amount: u64,
 }
