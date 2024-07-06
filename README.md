@@ -18,10 +18,10 @@ yarn
 
 Then navigate to the app:
 
-| Chain  |                               |                                 |
-|--------|-------------------------------|---------------------------------|
-| EVM    | [Vite](/packages/evm/vite)    | [NextJS](/packages/evm/next)    |
-| Solana | [Vite](/packages/solana/vite) | [NextJS](/packages/solana/next) |
+| Chain  |                               |                                                  |
+|--------|-------------------------------|--------------------------------------------------|
+| EVM    | [Vite](/packages/evm/vite)    | [NextJS TODO coming soon](/packages/evm/next)    |
+| Solana | [Vite](/packages/solana/vite) | [NextJS TODO coming soon](/packages/solana/next) |
 
 Where appropriate, copy `.env.example` to `.env` and populate the fields.
 

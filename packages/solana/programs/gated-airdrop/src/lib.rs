@@ -115,7 +115,7 @@ pub struct Claim<'info> {
     /// CHECK: Verified by the solana-gateway program
     pub gateway_token: UncheckedAccount<'info>,
 
-    pub recipient: Signer<'info>,
+    pub recipient: SystemAccount<'info>,
     pub rent: Sysvar<'info, Rent>,
     pub token_program: Program<'info, Token>,
     pub system_program: Program<'info, System>,

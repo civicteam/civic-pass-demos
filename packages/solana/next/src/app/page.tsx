@@ -1,10 +1,13 @@
-import './App.css';
-import {useAirdrop} from './AirdropContext';
-import {GatewayStatus, IdentityButton, useGateway} from '@civic/solana-gateway-react';
-import Balloon from "./balloon.svg?react";
-import {FC, PropsWithChildren} from "react";
+'use client';
+
+import {GatewayStatus, IdentityButton, useGateway} from "@civic/solana-gateway-react";
 import {WalletMultiButton} from "@solana/wallet-adapter-react-ui";
-import "@solana/wallet-adapter-react-ui/styles.css";
+import balloon from './balloon.svg';
+import Image from "next/image";
+import {FC, PropsWithChildren} from "react";
+import {useAirdrop} from "@/components/AirdropProvider";
+
+const Balloon: FC = () => <Image src={balloon} alt="balloon" width={269} height={304}/>
 
 const Notification: FC<PropsWithChildren<{}>> = ({children}) => <div className="notification">
     {children}
@@ -20,13 +23,15 @@ const Dashboard = () => {
         <>
             <IdentityButton className="civic-button app-button"/>
 
-            {!balance &&
-                <button
-                    className="app-button"
-                    disabled={!usersPassIsActive}
-                    onClick={claim}>{usersPassIsActive ? "Claim Airdrop" : "Verify first!"}
-                </button>
-            }
+            <button
+                className="app-button"
+                disabled={!usersPassIsActive}
+                onClick={claim}>{usersPassIsActive ? "Claim Airdrop" : "Verify first!"}
+            </button>
+
+            {(!!balance || !usersPassIsActive) &&
+                <a onClick={() => claim()}>Attempt to get Airdrop without Civic Pass</a>}
+
 
             {isConfirming && <Notification>Claiming</Notification>}
 
@@ -38,7 +43,7 @@ const Dashboard = () => {
         </>)
 }
 
-function App() {
+export default function Home() {
     return (
         <div className="App">
             <Balloon/>
@@ -52,10 +57,8 @@ function App() {
             </a> to verify you are a unique person and get the airdrop.
             </p>
 
-            <WalletMultiButton />
+            <WalletMultiButton/>
             <Dashboard/>
         </div>
-    );
-}
-
-export default App;
+    )
+};
