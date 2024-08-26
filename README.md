@@ -4,9 +4,10 @@ This monorepo contains a suite of demo apps, all using Civic Pass to gate access
 
 ## Demo Deployments
 
-[EVM (Polygon Amoy)](https://airdrop-demo.civic.me/evm)
-
-[Solana (devnet)](https://airdrop-demo.civic.me/solana)
+[EVM Vite (Polygon Amoy)](https://airdrop-demo.civic.me/evm)
+[Solana Vite (devnet)](https://airdrop-demo.civic.me/solana)
+[EVM NextJs (Polygon Amoy)](https://airdrop-demo.civic.me/next/evm)
+[Solana NextJs (devnet)](https://airdrop-demo.civic.me/next/solana)
 
 ## Getting Started
 
@@ -20,8 +21,8 @@ Then navigate to the app:
 
 | Chain  |                               |                                                  |
 |--------|-------------------------------|--------------------------------------------------|
-| EVM    | [Vite](/packages/evm/vite)    | [NextJS TODO coming soon](/packages/evm/next)    |
-| Solana | [Vite](/packages/solana/vite) | [NextJS TODO coming soon](/packages/solana/next) |
+| EVM    | [Vite](/packages/evm/vite)    | [NextJS](/packages/evm/next)    |
+| Solana | [Vite](/packages/solana/vite) | [NextJS](/packages/solana/next) |
 
 Where appropriate, copy `.env.example` to `.env` and populate the fields.
 
