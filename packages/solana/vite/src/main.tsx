@@ -4,7 +4,7 @@ import React, {StrictMode} from "react";
 import {Toaster} from "react-hot-toast";
 import {ConnectionProvider, WalletProvider} from "@solana/wallet-adapter-react";
 import {WalletModalProvider} from "@solana/wallet-adapter-react-ui";
-import {CivicPassProvider} from "./CivicPassContext";
+import {CivicPassProvider} from "./CivicPassProvider";
 import {AirdropProvider} from "./AirdropContext";
 import {clusterApiUrl} from "@solana/web3.js";
 import {WalletAdapterNetwork} from "@solana/wallet-adapter-base";

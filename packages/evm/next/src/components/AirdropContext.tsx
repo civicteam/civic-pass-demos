@@ -1,10 +1,17 @@
+"use client";
+
 import React, { createContext, FC, ReactNode, useContext } from "react";
-import { Airdrop__factory } from "./typechain-types";
-import { useWallet } from "./useWallet";
-import { useReadContract, useWaitForTransactionReceipt, useWriteContract, UseWriteContractReturnType } from "wagmi";
+import {Airdrop__factory} from "@/typechain-types";
+import {
+  useReadContract,
+  useWaitForTransactionReceipt,
+  useWalletClient,
+  useWriteContract,
+  UseWriteContractReturnType
+} from "wagmi";
 import type {Address} from "abitype";
 
-const contractAddress:Address  = import.meta.env.VITE_CONTRACT_ADDRESS as Address || "0xabc";
+const contractAddress:Address  = process.env.NEXT_PUBLIC_CONTRACT_ADDRESS as Address || "0xabc";
 
 type AirdropContextType = {
   balance: bigint | undefined;
@@ -26,7 +33,7 @@ export const AirdropContext = createContext<AirdropContextType>({
 });
 
 export const AirdropProvider: FC<{ children: ReactNode }> = ({ children }) => {
-  const wallet = useWallet();
+  const { data: walletClient } = useWalletClient();
 
   const {
     data: balance
@@ -34,7 +41,7 @@ export const AirdropProvider: FC<{ children: ReactNode }> = ({ children }) => {
     address: contractAddress,
     abi: Airdrop__factory.abi,
     functionName: "balanceOf",
-    args: [wallet?.address as Address]
+    args: [walletClient?.account.address as Address]
   });
 
   const { data: totalSupply } = useReadContract({
