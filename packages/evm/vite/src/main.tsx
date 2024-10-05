@@ -7,7 +7,7 @@ import {getDefaultConfig, RainbowKitProvider} from '@rainbow-me/rainbowkit';
 import {WagmiProvider} from 'wagmi';
 import {polygonAmoy} from "wagmi/chains";
 import {AirdropProvider} from "./AirdropContext.tsx";
-import {CivicPassProvider} from "./CivicPassContext.tsx";
+import {CivicPassProvider} from "./CivicPassProvider.tsx";
 
 /* New RainbowKit API */
 const config = getDefaultConfig({

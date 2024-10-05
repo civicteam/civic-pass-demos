@@ -1,4 +1,5 @@
 {
+  "trailingSlash": false,
   "rewrites": [
     {
       "source": "/solana/:path*",
@@ -7,6 +8,22 @@
     {
       "source": "/evm/:path*",
       "destination": "https://civic-pass-demos-evm-vite.vercel.app/:path*"
+    },
+    {
+      "source": "/next/solana",
+      "destination": "https://civic-pass-demos-solana-next.vercel.app/next/solana"
+    },
+    {
+      "source": "/next/solana/:path*",
+      "destination": "https://civic-pass-demos-solana-next.vercel.app/next/solana/:path*"
+    },
+    {
+      "source": "/next/evm",
+      "destination": "https://civic-pass-demos-evm-next.vercel.app/next/evm"
+    },
+    {
+      "source": "/next/evm/:path*",
+      "destination": "https://civic-pass-demos-evm-next.vercel.app/next/evm/:path*"
     }
     ],
   "redirects": [{

@@ -14,11 +14,6 @@ bun install
 bun dev
 ```
 
-Copy `.env.example` to `.env.local` and fill in the required values.
-
-Note - gas for all transactions is paid on the backend by the PAYER_SECRET_KEY wallet,
-so ensure you have sufficient devnet SOL to cover the transactions.
-
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 ## Offline Payer

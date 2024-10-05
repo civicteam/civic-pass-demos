@@ -1,7 +1,7 @@
 "use server";
 
 import {PublicKey} from "@solana/web3.js";
-import {AnchorProvider, Program, Wallet} from "@coral-xyz/anchor";
+import {AnchorProvider, Program} from "@coral-xyz/anchor";
 import {GatedAirdrop} from "@/types/gated_airdrop";
 import GatedAirdropIDL from "@/types/gated_airdrop.json";
 import {airdropAddress, connection, keypair} from "@/lib/solana";

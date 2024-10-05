@@ -17,13 +17,6 @@ const config: HardhatUserConfig = {
       url: 'https://rpc-amoy.polygon.technology',
       saveDeployments: true,
       accounts,
-    },
-    testnetLiveness: {
-      // Polygon Amoy
-      chainId: 80002,
-      url: 'https://rpc-amoy.polygon.technology',
-      saveDeployments: true,
-      accounts,
     }
   },
   namedAccounts: {
