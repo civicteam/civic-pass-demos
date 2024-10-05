@@ -996,7 +996,7 @@ version = "0.1.0"
 dependencies = [
  "anchor-lang",
  "anchor-spl",
- "solana-gateway",
+ "solana-gateway-anchor",
 ]
 
 [[package]]
@@ -1906,6 +1906,16 @@ dependencies = [
  "num-traits",
  "solana-program",
  "thiserror",
+]
+
+[[package]]
+name = "solana-gateway-anchor"
+version = "0.1.3"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "7c371c80fd1e6ad1da7e8ee3b8039add14b15c411682e05d8cc157908bf738e4"
+dependencies = [
+ "anchor-lang",
+ "solana-gateway",
 ]
 
 [[package]]
