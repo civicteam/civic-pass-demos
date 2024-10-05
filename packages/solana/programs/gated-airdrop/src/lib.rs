@@ -1,5 +1,3 @@
-mod anchor;
-
 use anchor_lang::prelude::*;
 use anchor_spl::{
     token::mint_to,
@@ -7,7 +5,7 @@ use anchor_spl::{
     associated_token::AssociatedToken,
     token::MintTo
 };
-use crate::anchor::Pass;
+use solana_gateway_anchor::Pass;
 
 declare_id!("air4tyw7S12bvdRtgoLgyQXuBfoLrjBS7Fg4r91zLb1");
 
