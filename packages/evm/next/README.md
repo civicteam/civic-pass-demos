@@ -1,8 +1,3 @@
-# Deprecation Notice
-
-> [!NOTE] The contents of this repo have been moved to [Civic Pass Demos](https://github.com/civicteam/civic-pass-demos)
->
-> 
 # This is a tiny demo app showing Civic Pass integration with Next 14.
 
 ## Getting Started
