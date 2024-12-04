@@ -1,7 +1,7 @@
 // Get the state of a pass using the @civic/solana-gateway-ts NPM library
 // Usage: RPC=<your rpc node> bun run getPassStatusUsingLibrary.ts <walletAddress> <gatekeeperNetwork>
 
-import {findGatewayTokensForOwnerAndNetwork} from '@civic/solana-gateway-ts';
+import {findGatewayTokensForOwnerAndNetwork, onGatewayTokenChange} from '@civic/solana-gateway-ts';
 import {Connection, PublicKey} from "@solana/web3.js";
 
 // The script needs the wallet address and gatekeeper network as arguments
@@ -21,5 +21,10 @@ findGatewayTokensForOwnerAndNetwork(connection, new PublicKey(walletAddress), ne
     tokens.forEach((token) => {
         console.log(`Pass status: ${token.state}`);
         console.log(`Expiration: ${token.expiryTime}`);
+
+        onGatewayTokenChange(connection, token.publicKey, (token) => {
+            console.log(`Pass status: ${token.state}`);
+            console.log(`Expiration: ${token.expiryTime}`);
+        });
     });
 });
