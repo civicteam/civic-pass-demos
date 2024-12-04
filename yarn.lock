@@ -353,20 +353,46 @@
     prop-types "^15.8.1"
     ramda "^0.30.0"
 
-"@civic/ethereum-gateway-react@^1.2.5":
-  version "1.3.0"
-  resolved "https://registry.yarnpkg.com/@civic/ethereum-gateway-react/-/ethereum-gateway-react-1.3.0.tgz#e2c620bc970489123f82b39087ee669ecb6eb6ec"
-  integrity sha512-VjdKWO5gRMc3x2dxKGsdjv1S/fnt5xPYMB1no/KnuXMCfDv0prbUb18wNFtP1OnRtP1F1zttXEz3NqGqmP1uoQ==
+"@civic/ethereum-gateway-react@^1.4.3":
+  version "1.4.3"
+  resolved "https://registry.yarnpkg.com/@civic/ethereum-gateway-react/-/ethereum-gateway-react-1.4.3.tgz#6d98c2451ee01092678e9ca054af6f313cab6c08"
+  integrity sha512-/7gqXIV72Mf7YPZ9Pq0+wgSPv30fUJY5IlTysKj9j4S1ANggunrFYhXCZnSguYLiC3ktMBIQ4qVAcR8h0JRi0A==
   dependencies:
     "@civic/ethereum-gateway-chain-client" "0.0.4"
-    "@civic/gateway-client-core" "1.0.8"
-    "@civic/gateway-client-react" "1.1.0"
-    "@identity.com/prove-ethereum-wallet" "1.1.1"
+    "@civic/gateway-client-core" "1.1.3"
+    "@civic/gateway-client-react" "1.2.4"
+    "@civic/prove-ethereum-wallet" "1.1.1"
     ethers "^6.12.1"
     prop-types "^15.8.1"
     ramda "^0.29.0"
 
-"@civic/gateway-client-core@1.0.8", "@civic/gateway-client-core@^1.0.7":
+"@civic/gateway-client-core@1.1.1":
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/@civic/gateway-client-core/-/gateway-client-core-1.1.1.tgz#724318931e117a2f6e77978b31ba2492bf963402"
+  integrity sha512-Yc7WAMz/VzdbN0ZdY6E1KsZAayYf+/M2ctd1Uy3TwRvFtlS3e//unHLeVjCxVAPU8WUBO9UCCXDjKQbX4Kb6Tg==
+  dependencies:
+    fetch-retry "^6.0.0"
+    immer "^10.0.4"
+    isomorphic-fetch "^3.0.0"
+    ramda "^0.30.0"
+    uuid "^9.0.1"
+    zustand "^4.5.2"
+    zustand-computed-state "^0.1.3"
+
+"@civic/gateway-client-core@1.1.3":
+  version "1.1.3"
+  resolved "https://registry.yarnpkg.com/@civic/gateway-client-core/-/gateway-client-core-1.1.3.tgz#bfe91da55fcf7af26863f3ada72af36e699003ff"
+  integrity sha512-cXxj64Bhe4ZrtAImekPlFT9cscdaytMlmzREfnitt4QfqezN7ZTGI/QQW3XNkHuHoS5/+zyFvBDXlR5HIjU+8w==
+  dependencies:
+    fetch-retry "^6.0.0"
+    immer "^10.0.4"
+    isomorphic-fetch "^3.0.0"
+    ramda "^0.30.0"
+    uuid "^9.0.1"
+    zustand "^4.5.2"
+    zustand-computed-state "^0.1.3"
+
+"@civic/gateway-client-core@^1.0.7":
   version "1.0.8"
   resolved "https://registry.yarnpkg.com/@civic/gateway-client-core/-/gateway-client-core-1.0.8.tgz#0f050130bfb64c215628cf195c04a04c2afa1476"
   integrity sha512-+Hmkcp0Hndg16NeaJRyjBYUPdjCVvHR4eZ5b57Bwupr8wiROTR0c7+6VugyL1nOuIJWanCAhvK0MN5aOePAnJQ==
@@ -379,12 +405,12 @@
     zustand "^4.5.2"
     zustand-computed-state "^0.1.3"
 
-"@civic/gateway-client-react@1.1.0":
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/@civic/gateway-client-react/-/gateway-client-react-1.1.0.tgz#1f2cbe7668856616728f4c0d73b6f6d0de60148e"
-  integrity sha512-s2u4ZN6eJCaXAZAwQNI5hxATsMTzWoNRtqSBITVy+d+xp2ZnzKkwqLKSnAR5trYcSrqOxUYEmARoJkmJGQGwiw==
+"@civic/gateway-client-react@1.2.4":
+  version "1.2.4"
+  resolved "https://registry.yarnpkg.com/@civic/gateway-client-react/-/gateway-client-react-1.2.4.tgz#46f4ac4bc1c716c29febc9adde6ac2f2ca7c442e"
+  integrity sha512-cl8Ff7Ax1svpge2jHLS6CRrgWjc6zcxEk8qrkS0ihX7AdjLGAPw70q/02nrubyC9N0is+gxo/TTU0D2E8yuBOA==
   dependencies:
-    "@civic/gateway-client-core" "1.0.8"
+    "@civic/gateway-client-core" "1.1.3"
     "@testing-library/react-hooks" "^8.0.1"
     fetch-retry "^5.0.6"
     iframe-resizer-react "^1.0.8"
@@ -425,33 +451,62 @@
     did-resolver "^3.2.0"
     ramda "^0.29.0"
 
-"@civic/solana-gateway-chain-client@0.0.4":
-  version "0.0.4"
-  resolved "https://registry.yarnpkg.com/@civic/solana-gateway-chain-client/-/solana-gateway-chain-client-0.0.4.tgz#7628e8dd8442808aa5278de89e931624e12e2a40"
-  integrity sha512-+X+MCJ4S/vOMebAF3MCnLJAMhDwUVy3rMeZam/FFtnzEjH5gEEdOjKlVd9Hn7Io2m8OTqm4Sb6WVIzbnV1mOFQ==
+"@civic/prove-ethereum-wallet@1.1.1":
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/@civic/prove-ethereum-wallet/-/prove-ethereum-wallet-1.1.1.tgz#64afe96d4620a314376cabd0e4a76738539e5ba0"
+  integrity sha512-HWLDC0K/VsSF8lDFG6XoQSS+3obOD4iWI08wg2S/ZF4CSA9IU8dAnbJS4YjW3bFQUS+Pxfaa44HQDkxt9YLlaw==
   dependencies:
-    "@civic/gateway-client-core" "^1.0.7"
-    "@identity.com/prove-solana-wallet" "0.4.2"
-    "@identity.com/solana-gateway-ts" "^0.13.0-alpha.0"
-    "@solana/web3.js" "^1.73.0"
+    "@ethersproject/abstract-signer" "^5.5.0"
+    buffer "^6.0.3"
+    ethers "^5.5.1"
+
+"@civic/prove-solana-wallet@0.4.3":
+  version "0.4.3"
+  resolved "https://registry.yarnpkg.com/@civic/prove-solana-wallet/-/prove-solana-wallet-0.4.3.tgz#f5c11cec90e9dba591fe18df9d19ab5d2234b29a"
+  integrity sha512-hbkYSKUiBG7+1oXTsetyMq7NWJg77xORZlL+WPm+Ak9OJXXRPhH1TKNhcSicPlNNGNfJf9OIVlkdDMgELRue2g==
+  dependencies:
+    "@solana/web3.js" "^1.95.3"
+    bs58 "^4.0.1"
+    tweetnacl "^1.0.3"
+
+"@civic/solana-gateway-chain-client@0.0.5":
+  version "0.0.5"
+  resolved "https://registry.yarnpkg.com/@civic/solana-gateway-chain-client/-/solana-gateway-chain-client-0.0.5.tgz#1827f1830f4f7615a741f113b2e98e7471624e6e"
+  integrity sha512-Y3qQ+e1NsFICpcMU1oAlh3ofIyl6bGuVUf+a9sT89T/0pyUV0gmb0MSPRIpbdhM7Gy2Qc6Sggi3GXyqK36LysQ==
+  dependencies:
+    "@civic/gateway-client-core" "1.1.1"
+    "@civic/prove-solana-wallet" "0.4.3"
+    "@civic/solana-gateway-ts" "^0.13.0-alpha.0"
+    "@solana/web3.js" "^1.95.3"
     prop-types "^15.8.1"
     ramda "^0.30.0"
 
-"@civic/solana-gateway-react@^1.0.7-beta.0":
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/@civic/solana-gateway-react/-/solana-gateway-react-1.1.0.tgz#2bf05e5c6b804f341faeb990c1dd1af0f0d243ab"
-  integrity sha512-sDMRdyebNW6hLd9Eof13+tuqI4m/L5Ybuwvr6ZY8SiEHlLYFneeJ8MBqW/7EcslKMV7mB8nZwxBSCWGaDhkzzA==
+"@civic/solana-gateway-react@^1.2.4":
+  version "1.2.4"
+  resolved "https://registry.yarnpkg.com/@civic/solana-gateway-react/-/solana-gateway-react-1.2.4.tgz#418939721a5c704abe455ab1090e40b53c5efbcb"
+  integrity sha512-UbgC5SMw0rACl7RbEiFISiV3tE2GA8tMZ2MN9wPGYF8zC1w2CV/TRd9qX17fuEXLbFh9hh0rbgpQSlKkQJfzGg==
   dependencies:
-    "@civic/gateway-client-core" "1.0.8"
-    "@civic/gateway-client-react" "1.1.0"
-    "@civic/solana-gateway-chain-client" "0.0.4"
-    "@identity.com/prove-solana-wallet" "0.4.2"
-    "@identity.com/solana-gateway-ts" "^0.13.0-alpha.0"
-    "@solana/web3.js" "^1.73.0"
+    "@civic/gateway-client-core" "1.1.3"
+    "@civic/gateway-client-react" "1.2.4"
+    "@civic/prove-solana-wallet" "0.4.3"
+    "@civic/solana-gateway-chain-client" "0.0.5"
+    "@civic/solana-gateway-ts" "0.13.0"
+    "@solana/web3.js" "^1.95.3"
     prop-types "^15.8.1"
     ramda "^0.28.0"
     uuid "^9.0.1"
     zustand "^4.5.2"
+
+"@civic/solana-gateway-ts@0.13.0", "@civic/solana-gateway-ts@^0.13.0-alpha.0":
+  version "0.13.0"
+  resolved "https://registry.yarnpkg.com/@civic/solana-gateway-ts/-/solana-gateway-ts-0.13.0.tgz#47ec8eb504c532a82253258faeca1218c2364dbf"
+  integrity sha512-YdYwQep/4QupPJJqO/arrcYJoP7BpkxvIlNCejU0MHWnoj0Y9SpgmxUuR7YUnXJePt46Erz1tSKpOo9Kz18hyQ==
+  dependencies:
+    "@solana/web3.js" "^1.91.4"
+    async-retry "^1.3.3"
+    bn.js "^5.2.1"
+    borsh "^0.4.0"
+    bs58 "^5.0.0"
 
 "@civic/storage-adapter@*":
   version "0.1.0"
@@ -1267,15 +1322,6 @@
     buffer "^6.0.3"
     ethers "^5.5.1"
 
-"@identity.com/prove-solana-wallet@0.4.2":
-  version "0.4.2"
-  resolved "https://registry.yarnpkg.com/@identity.com/prove-solana-wallet/-/prove-solana-wallet-0.4.2.tgz#e4250dbf1e884cd890746c977061342618226bd4"
-  integrity sha512-pf80VWM+BdeO/H5AcXQ28PFh0YuHHVOjKTYPTvdYreci+F0KZTfMBYHjcA1BESzX8GfRTOb1v+dkSlGeeU39RQ==
-  dependencies:
-    "@solana/web3.js" "^1.63.1"
-    bs58 "^4.0.1"
-    tweetnacl "^1.0.3"
-
 "@identity.com/sol-did-client-legacy@^2.0.4":
   version "2.0.4"
   resolved "https://registry.yarnpkg.com/@identity.com/sol-did-client-legacy/-/sol-did-client-legacy-2.0.4.tgz#95b7be01f0022cd34abaee37cc11750f423f1b54"
@@ -1306,17 +1352,6 @@
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/@identity.com/sol-did-idl/-/sol-did-idl-3.1.0.tgz#dfd00b0f80aeed25ff898a7bd95320df3abc337d"
   integrity sha512-umy6Adt9d7v50iduN02L5hzxK9742va0yZxFDsTopXcYAgTW/jQ/xsR5Q4VTuqJXtn6szhIO1q0hbNHScq22Cg==
-
-"@identity.com/solana-gateway-ts@^0.13.0-alpha.0":
-  version "0.13.0-alpha.1"
-  resolved "https://registry.yarnpkg.com/@identity.com/solana-gateway-ts/-/solana-gateway-ts-0.13.0-alpha.1.tgz#89486b54d77134c75086300041af6462211758e1"
-  integrity sha512-MpQCBqnc1cgODpnSURs3k1USN1ADLm0ig87ux+avEL/onXp6WHIzIOLfLoL9G+LXzJPcD0vsg6BxaDx5KiwG/Q==
-  dependencies:
-    "@solana/web3.js" "^1.91.4"
-    async-retry "^1.3.3"
-    bn.js "^5.2.1"
-    borsh "^0.4.0"
-    bs58 "^5.0.0"
 
 "@isaacs/cliui@^8.0.2":
   version "8.0.2"
@@ -2360,16 +2395,16 @@
     buffer "^6.0.1"
 
 "@rainbow-me/rainbowkit@^2.1.2":
-  version "2.1.5"
-  resolved "https://registry.yarnpkg.com/@rainbow-me/rainbowkit/-/rainbowkit-2.1.5.tgz#913169f9fb4518cff8fe2856ea2333e754b8bb00"
-  integrity sha512-Kdef0zu0bUlIOlbyyi3ukmQl7k8s3w0jTcWZxYTicZ/N4L35yX0vEzYgiG4u6OSXlbAQaC7VrkPKugPbSohnLQ==
+  version "2.2.1"
+  resolved "https://registry.yarnpkg.com/@rainbow-me/rainbowkit/-/rainbowkit-2.2.1.tgz#1ad672aa87be3e8e4135bc12d13b03cc0a784221"
+  integrity sha512-DvWbczNmm3BRr+EPZFwDK2vJRYxzSgHL0XzasL4RGMPsPuuRe9meLiTrznPqJvut7yNmib/ROqtblWJuxBvIKA==
   dependencies:
-    "@vanilla-extract/css" "1.14.0"
-    "@vanilla-extract/dynamic" "2.1.0"
-    "@vanilla-extract/sprinkles" "1.6.1"
-    clsx "2.1.0"
-    qrcode "1.5.3"
-    react-remove-scroll "2.5.7"
+    "@vanilla-extract/css" "1.15.5"
+    "@vanilla-extract/dynamic" "2.1.2"
+    "@vanilla-extract/sprinkles" "1.6.3"
+    clsx "2.1.1"
+    qrcode "1.5.4"
+    react-remove-scroll "2.6.0"
     ua-parser-js "^1.0.37"
 
 "@react-native-async-storage/async-storage@^1.17.7":
@@ -3276,10 +3311,31 @@
     "@solana/wallet-standard-core" "^1.1.1"
     "@solana/wallet-standard-wallet-adapter" "^1.1.2"
 
-"@solana/web3.js@^1.21.0", "@solana/web3.js@^1.32.0", "@solana/web3.js@^1.36.0", "@solana/web3.js@^1.59.1", "@solana/web3.js@^1.63.1", "@solana/web3.js@^1.68.0", "@solana/web3.js@^1.73.0", "@solana/web3.js@^1.87.0", "@solana/web3.js@^1.87.6", "@solana/web3.js@^1.90.2", "@solana/web3.js@^1.91.4", "@solana/web3.js@^1.91.6", "@solana/web3.js@^1.93.4":
+"@solana/web3.js@^1.21.0", "@solana/web3.js@^1.32.0", "@solana/web3.js@^1.36.0", "@solana/web3.js@^1.59.1", "@solana/web3.js@^1.63.1", "@solana/web3.js@^1.68.0", "@solana/web3.js@^1.87.0", "@solana/web3.js@^1.87.6", "@solana/web3.js@^1.90.2", "@solana/web3.js@^1.91.4", "@solana/web3.js@^1.91.6", "@solana/web3.js@^1.93.4":
   version "1.95.3"
   resolved "https://registry.yarnpkg.com/@solana/web3.js/-/web3.js-1.95.3.tgz#70b5f4d76823f56b5af6403da51125fffeb65ff3"
   integrity sha512-O6rPUN0w2fkNqx/Z3QJMB9L225Ex10PRDH8bTaIUPZXMPV0QP8ZpPvjQnXK+upUczlRgzHzd6SjKIha1p+I6og==
+  dependencies:
+    "@babel/runtime" "^7.25.0"
+    "@noble/curves" "^1.4.2"
+    "@noble/hashes" "^1.4.0"
+    "@solana/buffer-layout" "^4.0.1"
+    agentkeepalive "^4.5.0"
+    bigint-buffer "^1.1.5"
+    bn.js "^5.2.1"
+    borsh "^0.7.0"
+    bs58 "^4.0.1"
+    buffer "6.0.3"
+    fast-stable-stringify "^1.0.0"
+    jayson "^4.1.1"
+    node-fetch "^2.7.0"
+    rpc-websockets "^9.0.2"
+    superstruct "^2.0.2"
+
+"@solana/web3.js@^1.95.3":
+  version "1.95.8"
+  resolved "https://registry.yarnpkg.com/@solana/web3.js/-/web3.js-1.95.8.tgz#2d49abda23f7a79a3cc499ab6680f7be11786ee1"
+  integrity sha512-sBHzNh7dHMrmNS5xPD1d0Xa2QffW/RXaxu/OysRXBfwTp+LYqGGmMtCYYwrHPrN5rjAmJCsQRNAwv4FM0t3B6g==
   dependencies:
     "@babel/runtime" "^7.25.0"
     "@noble/curves" "^1.4.2"
@@ -4275,39 +4331,40 @@
   resolved "https://registry.yarnpkg.com/@ungap/structured-clone/-/structured-clone-1.2.0.tgz#756641adb587851b5ccb3e095daf27ae581c8406"
   integrity sha512-zuVdFrMJiuCDQUMCzQaD6KL28MjnqqN8XnAqiEq9PNm/hCPTSGfrXCOfwj1ow4LFb/tNymJPwsNbVePc1xFqrQ==
 
-"@vanilla-extract/css@1.14.0":
-  version "1.14.0"
-  resolved "https://registry.yarnpkg.com/@vanilla-extract/css/-/css-1.14.0.tgz#45fab9c04d893e3e363cf2cde7559d21233b7f63"
-  integrity sha512-rYfm7JciWZ8PFzBM/HDiE2GLnKI3xJ6/vdmVJ5BSgcCZ5CxRlM9Cjqclni9lGzF3eMOijnUhCd/KV8TOzyzbMA==
+"@vanilla-extract/css@1.15.5":
+  version "1.15.5"
+  resolved "https://registry.yarnpkg.com/@vanilla-extract/css/-/css-1.15.5.tgz#06782b98b4d1478baec578fb06c223bde589d4b3"
+  integrity sha512-N1nQebRWnXvlcmu9fXKVUs145EVwmWtMD95bpiEKtvehHDpUhmO1l2bauS7FGYKbi3dU1IurJbGpQhBclTr1ng==
   dependencies:
     "@emotion/hash" "^0.9.0"
-    "@vanilla-extract/private" "^1.0.3"
-    chalk "^4.1.1"
+    "@vanilla-extract/private" "^1.0.6"
     css-what "^6.1.0"
     cssesc "^3.0.0"
     csstype "^3.0.7"
+    dedent "^1.5.3"
     deep-object-diff "^1.1.9"
     deepmerge "^4.2.2"
+    lru-cache "^10.4.3"
     media-query-parser "^2.0.2"
     modern-ahocorasick "^1.0.0"
-    outdent "^0.8.0"
+    picocolors "^1.0.0"
 
-"@vanilla-extract/dynamic@2.1.0":
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/@vanilla-extract/dynamic/-/dynamic-2.1.0.tgz#316d3bd4adfd5f5c9fb080445c41d55abe3b463c"
-  integrity sha512-8zl0IgBYRtgD1h+56Zu13wHTiMTJSVEa4F7RWX9vTB/5Xe2KtjoiqApy/szHPVFA56c+ex6A4GpCQjT1bKXbYw==
+"@vanilla-extract/dynamic@2.1.2":
+  version "2.1.2"
+  resolved "https://registry.yarnpkg.com/@vanilla-extract/dynamic/-/dynamic-2.1.2.tgz#b1d1c1e0e392934c5a3bbb53f99069a7721311ac"
+  integrity sha512-9BGMciD8rO1hdSPIAh1ntsG4LPD3IYKhywR7VOmmz9OO4Lx1hlwkSg3E6X07ujFx7YuBfx0GDQnApG9ESHvB2A==
   dependencies:
-    "@vanilla-extract/private" "^1.0.3"
+    "@vanilla-extract/private" "^1.0.6"
 
-"@vanilla-extract/private@^1.0.3":
+"@vanilla-extract/private@^1.0.6":
   version "1.0.6"
   resolved "https://registry.yarnpkg.com/@vanilla-extract/private/-/private-1.0.6.tgz#f10bbf3189f7b827d0bd7f804a6219dd03ddbdd4"
   integrity sha512-ytsG/JLweEjw7DBuZ/0JCN4WAQgM9erfSTdS1NQY778hFQSZ6cfCDEZZ0sgVm4k54uNz6ImKB33AYvSR//fjxw==
 
-"@vanilla-extract/sprinkles@1.6.1":
-  version "1.6.1"
-  resolved "https://registry.yarnpkg.com/@vanilla-extract/sprinkles/-/sprinkles-1.6.1.tgz#2c8a832757a0d8104dc6bd5d961db2c70d1dbdcb"
-  integrity sha512-N/RGKwGAAidBupZ436RpuweRQHEFGU+mvAqBo8PRMAjJEmHoPDttV8RObaMLrJHWLqvX+XUMinHUnD0hFRQISw==
+"@vanilla-extract/sprinkles@1.6.3":
+  version "1.6.3"
+  resolved "https://registry.yarnpkg.com/@vanilla-extract/sprinkles/-/sprinkles-1.6.3.tgz#733968d653cc2395538b5c29f04dcdb0a2ca15c5"
+  integrity sha512-oCHlQeYOBIJIA2yWy2GnY5wE2A7hGHDyJplJo4lb+KEIBcJWRnDJDg8ywDwQS5VfWJrBBO3drzYZPFpWQjAMiQ==
 
 "@vitejs/plugin-react@^4.3.1":
   version "4.3.1"
@@ -5633,7 +5690,7 @@ chai@^5.1.1:
     loupe "^3.1.0"
     pathval "^2.0.0"
 
-chalk@4.1.2, chalk@^4.0.0, chalk@^4.1.0, chalk@^4.1.1, chalk@^4.1.2:
+chalk@4.1.2, chalk@^4.0.0, chalk@^4.1.0, chalk@^4.1.2:
   version "4.1.2"
   resolved "https://registry.yarnpkg.com/chalk/-/chalk-4.1.2.tgz#aac4e2b7734a740867aeb16bf02aad556a1e7a01"
   integrity sha512-oKnbhFyRIXpUuez8iBMmyEa4nbj4IOQyuhc/wy9kY7/WVPcwIO9VA668Pu8RkO7+0G76SLROeyw9CpQ061i4mA==
@@ -5776,20 +5833,15 @@ cliui@^8.0.1:
     strip-ansi "^6.0.1"
     wrap-ansi "^7.0.0"
 
-clsx@2.1.0:
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/clsx/-/clsx-2.1.0.tgz#e851283bcb5c80ee7608db18487433f7b23f77cb"
-  integrity sha512-m3iNNWpd9rl3jvvcBnu70ylMdrXt8Vlq4HYadnU5fwcOtvkSQWPmj7amUcDT2qYI7risszBjI5AUIUox9D16pg==
+clsx@2.1.1, clsx@^2.1.1:
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/clsx/-/clsx-2.1.1.tgz#eed397c9fd8bd882bfb18deab7102049a2f32999"
+  integrity sha512-eYm0QWBtUrBWZWG0d386OGAw16Z995PiOVo2B7bjWSbHedGl5e0ZWaq65kOGgUSNesEIDkB9ISbTg/JK9dhCZA==
 
 clsx@^1.2.1:
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/clsx/-/clsx-1.2.1.tgz#0ddc4a20a549b59c93a4116bb26f5294ca17dc12"
   integrity sha512-EcR6r5a8bj6pu3ycsa/E/cKVGuTgZJZdsyUYHOksG/UHIiKfjxzRxYJpyVBwYaQeOvghal9fcc4PidlgzugAQg==
-
-clsx@^2.1.1:
-  version "2.1.1"
-  resolved "https://registry.yarnpkg.com/clsx/-/clsx-2.1.1.tgz#eed397c9fd8bd882bfb18deab7102049a2f32999"
-  integrity sha512-eYm0QWBtUrBWZWG0d386OGAw16Z995PiOVo2B7bjWSbHedGl5e0ZWaq65kOGgUSNesEIDkB9ISbTg/JK9dhCZA==
 
 color-convert@^1.9.0:
   version "1.9.3"
@@ -6415,6 +6467,11 @@ decode-uri-component@^0.2.2:
   version "0.2.2"
   resolved "https://registry.yarnpkg.com/decode-uri-component/-/decode-uri-component-0.2.2.tgz#e69dbe25d37941171dd540e024c444cd5188e1e9"
   integrity sha512-FqUYQ+8o158GyGTrMFJms9qh3CqTKvAqgqsTnkLI8sKu0028orqBhxNMFkFen0zGyg6epACD32pjVk58ngIErQ==
+
+dedent@^1.5.3:
+  version "1.5.3"
+  resolved "https://registry.yarnpkg.com/dedent/-/dedent-1.5.3.tgz#99aee19eb9bae55a67327717b6e848d0bf777e5a"
+  integrity sha512-NHQtfOOW68WD8lgypbLA5oT+Bt0xXJhiYvoR6SmmNXZfpzOGXwdKWmcwG8N7PwVVWV3eF/68nmD9BaJSsTBhyQ==
 
 deep-eql@^4.0.1:
   version "4.1.4"
@@ -9280,7 +9337,7 @@ lower-case@^2.0.2:
   dependencies:
     tslib "^2.0.3"
 
-lru-cache@^10.2.0:
+lru-cache@^10.2.0, lru-cache@^10.4.3:
   version "10.4.3"
   resolved "https://registry.yarnpkg.com/lru-cache/-/lru-cache-10.4.3.tgz#410fc8a17b70e598013df257c2446b7f3383f119"
   integrity sha512-JNAzZcXrCt42VGLuYz0zfAzDfAvJWW6AfYlDBQyDV5DClI2m5sAmK+OIO7s59XfsRsWHp02jAJrRadPRGTt6SQ==
@@ -9935,11 +9992,6 @@ os-tmpdir@~1.0.2:
   resolved "https://registry.yarnpkg.com/os-tmpdir/-/os-tmpdir-1.0.2.tgz#bbe67406c79aa85c5cfec766fe5734555dfa1274"
   integrity sha512-D2FR03Vir7FIu45XBY20mTb+/ZSWB00sjU9jdQXt83gDrI4Ztz5Fs7/yy74g2N5SVQY4xY1qDr4rNddwYRVX0g==
 
-outdent@^0.8.0:
-  version "0.8.0"
-  resolved "https://registry.yarnpkg.com/outdent/-/outdent-0.8.0.tgz#2ebc3e77bf49912543f1008100ff8e7f44428eb0"
-  integrity sha512-KiOAIsdpUTcAXuykya5fnVVT+/5uS0Q1mrkRHcF89tpieSmY33O/tmc54CqwA+bfhbtEfZUNLHaPUiB9X3jt1A==
-
 p-limit@^1.1.0:
   version "1.3.0"
   resolved "https://registry.yarnpkg.com/p-limit/-/p-limit-1.3.0.tgz#b86bd5f0c25690911c7590fcbfc2010d54b3ccb8"
@@ -10455,6 +10507,15 @@ qrcode@1.5.3:
     pngjs "^5.0.0"
     yargs "^15.3.1"
 
+qrcode@1.5.4:
+  version "1.5.4"
+  resolved "https://registry.yarnpkg.com/qrcode/-/qrcode-1.5.4.tgz#5cb81d86eb57c675febb08cf007fff963405da88"
+  integrity sha512-1ca71Zgiu6ORjHqFBDpnSMTR2ReToX4l1Au1VFLyVeBTFavzQnv5JxMFr3ukHVKpSrSA2MCk0lNJSykjUfz7Zg==
+  dependencies:
+    dijkstrajs "^1.0.1"
+    pngjs "^5.0.0"
+    yargs "^15.3.1"
+
 qs@^6.12.3, qs@^6.9.4:
   version "6.13.0"
   resolved "https://registry.yarnpkg.com/qs/-/qs-6.13.0.tgz#6ca3bd58439f7e245655798997787b0d88a51906"
@@ -10628,7 +10689,7 @@ react-refresh@^0.14.2:
   resolved "https://registry.yarnpkg.com/react-refresh/-/react-refresh-0.14.2.tgz#3833da01ce32da470f1f936b9d477da5c7028bf9"
   integrity sha512-jCvmsr+1IUSMUyzOkRcvnVbX3ZYC6g9TDrDbFuFmRDq7PD4yaGbLKNQL6k2jnArV8hjYxh7hVhAZB6s9HDGpZA==
 
-react-remove-scroll-bar@^2.3.4:
+react-remove-scroll-bar@^2.3.6:
   version "2.3.6"
   resolved "https://registry.yarnpkg.com/react-remove-scroll-bar/-/react-remove-scroll-bar-2.3.6.tgz#3e585e9d163be84a010180b18721e851ac81a29c"
   integrity sha512-DtSYaao4mBmX+HDo5YWYdBWQwYIQQshUV/dVxFxK+KM26Wjwp1gZ6rv6OC3oujI6Bfu6Xyg3TwK533AQutsn/g==
@@ -10636,12 +10697,12 @@ react-remove-scroll-bar@^2.3.4:
     react-style-singleton "^2.2.1"
     tslib "^2.0.0"
 
-react-remove-scroll@2.5.7:
-  version "2.5.7"
-  resolved "https://registry.yarnpkg.com/react-remove-scroll/-/react-remove-scroll-2.5.7.tgz#15a1fd038e8497f65a695bf26a4a57970cac1ccb"
-  integrity sha512-FnrTWO4L7/Bhhf3CYBNArEG/yROV0tKmTv7/3h9QCFvH6sndeFf1wPqOcbFVu5VAulS5dV1wGT3GZZ/1GawqiA==
+react-remove-scroll@2.6.0:
+  version "2.6.0"
+  resolved "https://registry.yarnpkg.com/react-remove-scroll/-/react-remove-scroll-2.6.0.tgz#fb03a0845d7768a4f1519a99fdb84983b793dc07"
+  integrity sha512-I2U4JVEsQenxDAKaVa3VZ/JeJZe0/2DxPWL8Tj8yLKctQJQiZM52pn/GWFpSp8dftjM3pSAHVJZscAnC/y+ySQ==
   dependencies:
-    react-remove-scroll-bar "^2.3.4"
+    react-remove-scroll-bar "^2.3.6"
     react-style-singleton "^2.2.1"
     tslib "^2.1.0"
     use-callback-ref "^1.3.0"
