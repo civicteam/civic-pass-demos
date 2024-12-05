@@ -14,8 +14,10 @@ contract Airdrop is IERC20, Gated {
     string public symbol = "ERC20";
     uint8 public decimals = 18;
 
+    address public constant GATEWAY_TOKEN_CONTRACT = 0xF65b6396dF6B7e2D8a6270E3AB6c7BB08BAEF22E;
+
     /* Step 3: Add a constructor */
-    constructor(address gatewayTokenContract, uint256 gatekeeperNetwork) Gated(gatewayTokenContract, gatekeeperNetwork){
+    constructor(uint256 gatekeeperNetwork) Gated(GATEWAY_TOKEN_CONTRACT, gatekeeperNetwork){
     }
 
     /* Step 4: Gate your function */
