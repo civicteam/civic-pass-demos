@@ -33,6 +33,10 @@ gatewayTs.getToken(walletAddress, base58ToBigInt(gatekeeperNetwork)).then(token 
 
 // Subscribe to changes in the token state
 gatewayTs.onGatewayTokenChange(walletAddress, base58ToBigInt(gatekeeperNetwork), (token) => {
+    if(!token) {
+        console.log('Token not found');
+        return;
+    }
     console.log(`Token ID: ${token.tokenId}`);
     console.log(`Pass status: ${TokenState[token.state]}`);
     console.log(`Expiration: ${token.expiration}`);

@@ -1,8 +1,14 @@
 import {decode} from "bs58";
 
-const base58ToHex = (base58: string) => {
+const base58ToHex = (base58: string): string => {
     try {
-        return decode(base58).toString('hex');
+        if(parseInt(base58) < 30) {
+            // Early Civic passes use smaller EVM slot ID's not derived from base58. These can be passed in as integers.
+            return parseInt(base58).toString(16);
+        }
+    } catch {}
+    try {
+        return Buffer.from(decode(base58)).toString('hex');
     } catch (error) {
         console.log('Error decoding base58 string:', error);
         throw new Error(`Invalid base58 string: ${base58}. Pass types created before July 2024 are mapped to a slot ID in the gateway contract - these are not supported here.`);

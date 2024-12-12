@@ -30,7 +30,11 @@ const abi = [
 // Note - we are not using typescript here, but typescript bindings are available here:
 // https://github.com/civicteam/on-chain-identity-gateway/tree/main/ethereum/gateway-eth-ts/src/contracts/typechain-types
 const contract = new ethers.Contract(GATEWAY_CONTRACT_ADDRESS, abi, provider);
-contract.getTokenIdsByOwnerAndNetwork(walletAddress, slotId, true).then((tokenIds: bigint[]) => {
+// Last argument: true to include only Active passes, false to include all passes.
+contract.getTokenIdsByOwnerAndNetwork(walletAddress, slotId, false).then((tokenIds: bigint[]) => {
+    if(!tokenIds || tokenIds.length === 0) {
+      console.log('No passes found');
+    }
     // For each token ID, look up its state on chain.
     tokenIds.forEach(async tokenId => {
         const [owner, state, identity, expiration, bitmask] = await contract.getToken(tokenId);
